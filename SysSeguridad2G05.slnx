@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SysSeguridad2G05.BL/SysSeguridad2G05.BL.csproj" />
+  <Project Path="SysSeguridad2G05.DAL/SysSeguridad2G05.DAL.csproj" />
+  <Project Path="SysSeguridad2G05.EN/SysSeguridad2G05.EN.csproj" />
+  <Project Path="SysSeguridad2G05.UIMVC/SysSeguridad2G05.UIMVC.csproj" />
+</Solution>
