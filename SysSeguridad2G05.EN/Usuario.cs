@@ -14,7 +14,7 @@ namespace SysSeguridad2G05.EN
         [ForeignKey("Rol")]
         [Required(ErrorMessage = "Rol es obligatorio")]
         [Display( Name = "Rol")]
-        public int RolId { get; set; }
+        public int IdRol { get; set; }
 
         [Required(ErrorMessage = "Nombre de usuario es obligatorio")]
         [StringLength(40, ErrorMessage = "Maximo 40 caracteres")]
