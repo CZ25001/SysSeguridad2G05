@@ -1,0 +1,63 @@
+package org.example.prueba2.presentacion;
+
+import org.example.prueba2.dominio.User;
+
+import javax.swing.*;
+
+public class MainForm extends JFrame {
+    private User userAutenticate;
+    private JPanel frmPrincipal;
+
+    public User getUserAutenticate() {return userAutenticate; }
+    public void setUserAutenticate(User userAutenticate)
+    { this.userAutenticate = userAutenticate; }
+
+    public MainForm() {
+        setTitle("Sistema en java para escritorio");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        createMenu();
+    }
+
+    private void createMenu()
+    {
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+
+        JMenu menuPerfil = new JMenu();
+        menuBar.add(menuPerfil);
+
+        JMenuItem itemChangePassword = new JMenuItem("Cambiar Contraseña");
+        menuPerfil.add(itemChangePassword);
+        itemChangePassword.addActionListener(e -> {
+            ChangePasswordForm changePassword = new ChangePasswordForm(this);
+            changePassword.setVisible(true);
+        });
+
+        JMenuItem itemChangeUser = new JMenuItem("Cambiar Usuario");
+        menuPerfil.add(itemChangeUser);
+        itemChangeUser.addActionListener(e -> {
+            LoginForm loginForm = new LoginForm(this);
+            loginForm.setVisible(true);
+        });
+
+        JMenuItem itemSalir = new JMenuItem("Salid");
+        menuPerfil.add(itemSalir);
+        itemSalir.addActionListener(e -> {
+            System.exit(0);
+        });
+
+        //Menu mantenimiento
+        JMenu manuMantenimiento = new JMenu("Mantenimiento");
+        menuBar.add(manuMantenimiento);
+
+        JMenuItem itemUsers = new JMenuItem("Usuarios");
+        manuMantenimiento.add(itemUsers);
+        itemUsers.addActionListener(e -> {
+            UserReadingForm userReadingForm = new UserReadingForm(this);
+            userReadingForm.setVisible(true);
+        });
+    }
+
+}
